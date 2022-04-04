@@ -1,20 +1,30 @@
-let close0 = document.getElementById("close");
-let hum = document.getElementById("hum");
-let menu = document.getElementById("menu");
-let hide = document.getElementsByClassName("hide");
 
+const hum = document.querySelector("#hum");
+const close1 = document.querySelector("#close");
+const meno = document.querySelector("#menu");
 
-close0.onclick = function(){
+hum.addEventListener("click", () => {
 
-  menu.classList.add('hide');
-  hum.classList.remove('hide');
-  this.classList.add('hide');
-  
-}
-hum.onclick = function(){
+    const visi = meno.getAttribute('data-visible')
 
-  menu.classList.remove('hide');
-  close0.classList.remove('hide');
-  this.classList.add('hide');
+    if(visi === "false"){
 
-}
+        hum.setAttribute("data-visible" , false )
+        close1.setAttribute("data-visible" , true )
+        meno.setAttribute("data-visible" , true )
+
+    }
+})
+
+close1.addEventListener("click", () => {
+
+    const visi = meno.getAttribute('data-visible')
+
+    if(visi === "true"){
+
+        hum.setAttribute("data-visible" , true )
+        close1.setAttribute("data-visible" , false )
+        meno.setAttribute("data-visible" , false )
+
+    }
+})

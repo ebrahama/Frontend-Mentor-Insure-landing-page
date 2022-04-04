@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@400;700&display=swap');
 
 
 :root{
@@ -14,6 +15,8 @@
 
 html{
     font-size: 15px;
+    overflow-x: hidden; 
+
 }
 
 body{
@@ -21,6 +24,9 @@ body{
     padding: 0;
     box-sizing: border-box;
     background:whitesmoke;
+    font-family: 'Karla', sans-serif;
+    overflow-x: hidden; 
+
 }
 
 .hide{
@@ -32,6 +38,7 @@ body{
      width: 100%;
      height: 70px;
      position: relative;
+     font-family: 'DM Serif Display', serif;
     }
     .iner{
      width: 80%;
@@ -58,16 +65,31 @@ body{
      }
     .header ul{
      list-style: none;
+     padding: 20px;
      width: 56%;
      height: 189px;
      border: 1px solid black;
      border-radius: 10px;
      text-align: center;
      position: absolute;
-     right: 0;
-     top: 9vh;
+     right: 20px;
+     top: 14vh;
      z-index: 444;
      background: var(--Very-Light-Gray);
+     transform: translateX(150%);
+     transition: transform 350ms ease-out;
+    }
+    .header ul[data-visible="true"]{
+        transform: translateX(0);
+    }
+    .hum[data-visible="false"]{
+        display: none;
+     }
+     .close[data-visible="true"]{
+        display: block;
+    }
+    .close{
+        display: none;
     }
     .header li{
     padding: 15px 0px;
@@ -85,9 +107,7 @@ body{
         background: transparent;
         cursor: pointer;
     }
-    .close{
-
-    }
+   
 
            /* top section */
 .top{
@@ -288,9 +308,10 @@ left: 0;
         position: initial;
         padding-left:200px ;
 
+        transform: translateX(0);
+        background: none;
         border: none;
         height: inherit;
-    
        }
      .iner{
          padding: 20px 70px;
